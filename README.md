@@ -69,13 +69,13 @@ Output: structured JSON response
 
 # 1️⃣ Planner
 
-  *Reads the user question
+  *  Reads the user question
 
-  *Produces a concise step-by-step plan
+  *  Produces a concise step-by-step plan
 
-  Example:
+    Example:
 
-  parse → extract quantities → compute → validate → format answer
+    parse → extract quantities → compute → validate → format answer
 
 ---
 
@@ -87,70 +87,70 @@ Output: structured JSON response
 
   *  May call:
 
-    *  LLM (for reasoning)
+      *  LLM (for reasoning)
 
-    *  Python code (for arithmetic)
+      *  Python code (for arithmetic)
 
 ---
 
 # 3️⃣ Verifier
 
-  *Re-checks the solution using one or more methods:
+  *  Re-checks the solution using one or more methods:
 
-    *Independent re-solving
+    *  Independent re-solving
 
-    *Constraint validation
+    *  Constraint validation
 
-    *Consistency checks
+    *  Consistency checks
 
   If verification fails:
 
-    *Retries up to a fixed limit
+    *  Retries up to a fixed limit
 
-    *Otherwise marks status as failed
+    *  Otherwise marks status as failed
 
 ---
 
 ## 🔍 Key Design Principles
 
-  *No raw chain-of-thought exposed
+  *  No raw chain-of-thought exposed
 
-  *Clean separation of concerns
+  *  Clean separation of concerns
 
-  *Deterministic validation wherever possible
+  *  Deterministic validation wherever possible
 
-  *Retry-based robustness
+  *  Retry-based robustness
 
-  *Debug metadata preserved for evaluation
+  *  Debug metadata preserved for evaluation
 
 
 ## 🧪 Evaluation & Test Cases
 
 The project includes a small test suite with:
 
-  *Easy cases
+  *  Easy cases
 
-    *Basic arithmetic
+      *  Basic arithmetic
 
-    *Simple time differences
+      *  Simple time differences
 
-  *Tricky cases
+  *  Tricky cases
 
-    *Multi-step reasoning
+      *  Multi-step reasoning
 
-    *Boundary conditions
+      *  Boundary conditions
 
-    *Ambiguous quantities
+      *  Ambiguous quantities
 
 For each test, the following are logged:
 
-  *Input question
+    *  Input question
 
-  *Final JSON output
+    *  Final JSON output
 
-  *Verification status
+    *  Verification status
 
-  *Retry count
+    *  Retry count
 
 ## 🚧 Challenges & Solutions
 |Challenge |	Solution |
