@@ -95,17 +95,17 @@ Output: structured JSON response
 
 # 3️⃣ Verifier
 
-  *  Re-checks the solution using one or more methods:
+    *  Re-checks the solution using one or more methods:
 
-    *  Independent re-solving
+      *  Independent re-solving
 
-    *  Constraint validation
+      *  Constraint validation
 
-    *  Consistency checks
+      *  Consistency checks
 
   If verification fails:
-
-    *  Retries up to a fixed limit
+  
+      *  Retries up to a fixed limit
 
     *  Otherwise marks status as failed
 
