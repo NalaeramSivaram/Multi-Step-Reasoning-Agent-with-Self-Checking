@@ -144,13 +144,13 @@ The project includes a small test suite with:
 
 For each test, the following are logged:
 
-        *  Input question
+  * Input question
+  
+  * Final JSON output
 
-        *  Final JSON output
+  * Verification status
 
-        *  Verification status
-
-        *  Retry count
+  * Retry count
 
 ## 🚧 Challenges & Solutions
 |Challenge |	Solution |
@@ -164,7 +164,7 @@ For each test, the following are logged:
 ---
 
 ## 🛠️ Technologies Used
-*Python
-*LLM API (OpenAI / Anthropic / Gemini or mock)
-*JSON-based input/output
-*Modular prompt design
+*  Python
+*  LLM API (OpenAI / Anthropic / Gemini or mock)
+*  JSON-based input/output
+*  Modular prompt design
