@@ -62,5 +62,4 @@ Output: structured JSON response
   }
 }
 
----
 
