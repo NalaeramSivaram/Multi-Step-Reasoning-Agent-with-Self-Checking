@@ -48,7 +48,7 @@ Output: structured JSON response
 {
   "answer": "<final short answer>",
   "status": "success | failed",
-  "reasoning_visible_to_user": "<brief explanation>",
+  "reasoning_visible_to_user": "<short explanation>",
   "metadata": {
     "plan": "<abbreviated internal plan>",
     "checks": [
@@ -58,7 +58,7 @@ Output: structured JSON response
         "details": "<string>"
       }
     ],
-    "retries": <integer>
+    "retries": 0
   }
 }
 
