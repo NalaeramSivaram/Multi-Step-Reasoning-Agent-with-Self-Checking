@@ -63,4 +63,124 @@ Output: structured JSON response
 }
 ```
 ---
+🏗️ Agent Architecture
+
+The agent follows a three-phase internal loop:
+
+1️⃣ Planner
+
+Reads the user question
+
+Produces a concise step-by-step plan
+
+Example:
+
+parse → extract quantities → compute → validate → format answer
+
+2️⃣ Executor
+
+Executes the plan
+
+Performs intermediate calculations
+
+May call:
+
+LLM (for reasoning)
+
+Python code (for arithmetic)
+
+3️⃣ Verifier
+
+Re-checks the solution using one or more methods:
+
+Independent re-solving
+
+Constraint validation
+
+Consistency checks
+
+If verification fails:
+
+Retries up to a fixed limit
+
+Otherwise marks status as failed
+
+🔍 Key Design Principles
+
+No raw chain-of-thought exposed
+
+Clean separation of concerns
+
+Deterministic validation wherever possible
+
+Retry-based robustness
+
+Debug metadata preserved for evaluation
+
+🧠 Prompt Design
+
+Separate prompts are used for:
+
+Planner Prompt
+
+Generates structured reasoning steps
+
+Executor Prompt
+
+Executes plan and computes intermediate results
+
+Verifier Prompt
+
+Validates solution correctness
+
+Each prompt:
+
+Enforces strict output formats
+
+Includes example problems
+
+Is modular and replaceable
+
+🧪 Evaluation & Test Cases
+
+The project includes a lightweight test suite with:
+
+5–10 easy problems
+
+Basic arithmetic
+
+Simple time differences
+
+3–5 tricky problems
+
+Multi-step reasoning
+
+Edge cases (time boundaries, ambiguous quantities)
+
+For each test, the following are logged:
+
+Question
+
+Final JSON output
+
+Verification result
+
+Retry count
+
+🚧 Challenges & Solutions
+Challenge	Solution
+Incorrect arithmetic	Added explicit calculation and validation
+Logical inconsistencies	Introduced verifier phase
+Over-verbose reasoning	Hid chain-of-thought from user
+Ambiguous questions	Conservative parsing and checks
+False confidence	Retry or fail with explanation
+🛠️ Technologies Used
+
+Python
+
+LLM API (pluggable: OpenAI / Anthropic / Gemini / Mock)
+
+JSON-based I/O
+
+Modular prompt design
 
