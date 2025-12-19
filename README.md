@@ -64,6 +64,7 @@ Output: structured JSON response
 
 ---
 
+
 🏗️ Agent Architecture
 
 The agent follows a three-phase internal loop:
