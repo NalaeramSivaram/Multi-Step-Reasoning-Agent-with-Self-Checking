@@ -155,17 +155,16 @@ For each test, the following are logged:
 ## 🚧 Challenges & Solutions
 |Challenge |	Solution |
 |----|----|
-Arithmetic errors	Explicit calculation and validation
-Logical inconsistencies	Verifier phase with re-checking
-Over-verbose reasoning	Hid chain-of-thought from user
-Ambiguous inputs	Conservative parsing and checks
-False confidence	Retry or fail with explanation
-🛠️ Technologies Used
+|Arithmetic errors |	Explicit calculation and validation|
+|Logical inconsistencies	| Verifier phase with re-checking|
+|Over-verbose reasoning	| Hid chain-of-thought from user|
+|Ambiguous inputs	| Conservative parsing and checks|
+|False confidence	| Retry or fail with explanation|
 
-Python
+---
 
-LLM API (OpenAI / Anthropic / Gemini or mock)
-
-JSON-based input/output
-
-Modular prompt design
+## 🛠️ Technologies Used
+*Python
+*LLM API (OpenAI / Anthropic / Gemini or mock)
+*JSON-based input/output
+*Modular prompt design
