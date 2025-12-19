@@ -163,8 +163,6 @@ For each test, the following are logged:
 
 ---
 
----
-
 ## 🧠 Approach Used
 
 The solution follows a **multi-phase reasoning loop** designed to mimic
