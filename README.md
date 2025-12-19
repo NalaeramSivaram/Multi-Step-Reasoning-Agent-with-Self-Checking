@@ -105,9 +105,9 @@ Output: structured JSON response
 
   If verification fails:
   
-    *  Retries up to a fixed limit
+      *  Retries up to a fixed limit
 
-    *  Otherwise marks status as failed
+      *  Otherwise marks status as failed
 
 ---
 
@@ -144,13 +144,13 @@ The project includes a small test suite with:
 
 For each test, the following are logged:
 
-      *  Input question
+        *  Input question
 
-      *  Final JSON output
+        *  Final JSON output
 
-      *  Verification status
+        *  Verification status
 
-      *  Retry count
+        *  Retry count
 
 ## 🚧 Challenges & Solutions
 |Challenge |	Solution |
