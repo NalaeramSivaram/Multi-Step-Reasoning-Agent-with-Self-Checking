@@ -81,15 +81,15 @@ Output: structured JSON response
 
 # 2️⃣ Executor
 
-  *Executes the plan
+  *  Executes the plan
 
-  *Performs intermediate calculations
+  *  Performs intermediate calculations
 
-  *May call:
+  *  May call:
 
-    *LLM (for reasoning)
+    *  LLM (for reasoning)
 
-    *Python code (for arithmetic)
+    *  Python code (for arithmetic)
 
 ---
 
