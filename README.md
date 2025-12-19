@@ -163,8 +163,57 @@ For each test, the following are logged:
 
 ---
 
+---
+
+## 🧠 Approach Used
+
+The solution follows a **multi-phase reasoning loop** designed to mimic
+human problem-solving while ensuring correctness through validation.
+
+### Step-by-Step Approach
+
+1. **Planning Phase**
+   - The agent reads the input question.
+   - It generates a concise, structured plan describing how the problem
+     should be solved.
+   - Example plan:
+     ```
+     parse → extract quantities → compute → validate → format answer
+     ```
+
+2. **Execution Phase**
+   - The agent follows the generated plan step by step.
+   - Intermediate calculations and deductions are performed.
+   - Arithmetic-heavy steps are handled using deterministic code
+     (e.g., Python) to avoid calculation errors.
+   - The agent may use an LLM for reasoning where appropriate.
+
+3. **Verification Phase**
+   - The intermediate solution is re-checked before producing the final answer.
+   - Verification includes:
+     - Independent re-solving
+     - Constraint validation (e.g., time ranges, totals, non-negative values)
+     - Logical consistency checks
+
+4. **Retry or Fail Handling**
+   - If verification fails, the agent retries the plan–execute cycle
+     up to a limited number of times.
+   - If all retries fail, the agent returns a structured failure response.
+
+### Why This Approach Works
+
+- Prevents single-pass reasoning errors
+- Reduces arithmetic and logical mistakes
+- Avoids exposing raw chain-of-thought
+- Produces reliable, explainable answers
+- Makes the system easier to debug and extend
+
+---
+
 ## 🛠️ Technologies Used
 *  Python
 *  LLM API (OpenAI / Anthropic / Gemini or mock)
 *  JSON-based input/output
 *  Modular prompt design
+
+---
